@@ -34,15 +34,13 @@ Use KMS email to access resources
     │   │   ├── main.py
     │   │   ├── requirements.txt
     │   │   └── server
-    │   │       ├── copy-saved-model-here
+    │   │       ├── copy-saved-model-here      
     │   │       ├── app.py
     │   │       ├── text2sql
     │   │       │   ├── __init__.py
     │   │       │   ├── gpt_model.py            # GPT model 
     │   │       │   ├── postprocess.py          # Postprocess for inference
     │   │       │   ├── preprocess.py           # Preprocess for inference
-    │   │       │   ├── saved                   # saved model
-    │   │       │   │   └── baseline            # Baseline model download from drive
     │   │       │   └── text2sql.py             # Text2SQL model
     │   │       ├── models                      # API model
     │   │       │   ├── GPT.py                  # GPT request format
