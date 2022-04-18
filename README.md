@@ -34,6 +34,7 @@ Use KMS email to access resources
     │   │   ├── main.py
     │   │   ├── requirements.txt
     │   │   └── server
+    │   │       ├── copy-saved-model-here
     │   │       ├── app.py
     │   │       ├── text2sql
     │   │       │   ├── __init__.py
@@ -135,8 +136,7 @@ WebApp/API/server/copy-saved-model-here
 2. Add your model path in **WebApp/API/server/gpt/text2sql.py**
 
 ```python
-model = GPTModel(model_path="./API/server/gpt/saved/baseline")
-
+model = GPTModel(model_path="./API/server/copy-saved-model-here")
 ```
 
 3. In terminal enter:
