@@ -1,6 +1,6 @@
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1QIOEfsB7DPcPRp9VX3fK2yg6atybkHvq#scrollTo=Bsy56wuXOPg1)
 
-# KMS Technical Challenge : Writing SQL without Knowing SQL
+# TechChallenge #1: Writing SQL without Knowing SQL
 
 > by tsdocode from CoE
 
@@ -130,7 +130,7 @@ cd Web-app
 
 1. Copy your model into 
 ```
-Web-app/API/server/gpt/saved
+Web-app/API/server/copy-saved-model-here
 ```
 2. Add your model path in **Web-app/API/server/gpt/text2sql.py**
 
