@@ -29,7 +29,7 @@ Use KMS email to access resources
     │   ├── model.py                        # GPT model
     │   ├── preprocess.py                   # Apply preprocessing
     │   ├── requirements.txt                # Requirements Python package
-    ├── Web-app
+    ├── WebApp
     │   ├── API
     │   │   ├── main.py
     │   │   ├── requirements.txt
@@ -122,20 +122,20 @@ default:
 
 if you want to continued training from a previous model, you can use -p to specify the path of the previous model. 
 
-## **5. Start Web-app**
+## **5. Start WebApp**
 
 ```
-cd Web-app
+cd WebApp
 ```
 
 1. Copy your model into 
 ```
-Web-app/API/server/copy-saved-model-here
+WebApp/API/server/copy-saved-model-here
 ```
-2. Add your model path in **Web-app/API/server/gpt/text2sql.py**
+2. Add your model path in **WebApp/API/server/gpt/text2sql.py**
 
 ```python
-model = GPTModel(model_path="./server/gpt/saved/baseline")
+model = GPTModel(model_path="./API/server/gpt/saved/baseline")
 
 ```
 

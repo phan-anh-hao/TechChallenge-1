@@ -32,7 +32,7 @@ Checkout [FastAPIxStreamlit](https://github.com/tsdocode/GPT-Example) example
     │   ├── model.py                        # GPT model
     │   ├── preprocess.py                   # Apply preprocessing
     │   ├── requirements.txt                # Requirements Python package
-    ├── Web-app
+    ├── WebApp
     │   ├── API
     │   │   ├── main.py
     │   │   ├── requirements.txt

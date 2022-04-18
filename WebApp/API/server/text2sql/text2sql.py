@@ -3,7 +3,7 @@ import pandas as pd
 from happytransformer import HappyGeneration, GENSettings
 from server.text2sql.gpt_model import GPTModel
 
-model = GPTModel(model_path="./server/copy-saved-model-here/baseline")
+model = GPTModel(model_path="./API/server/copy-saved-model-here/baseline")
 
 
 model_dict = {
