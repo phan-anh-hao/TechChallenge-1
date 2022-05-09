@@ -3,7 +3,7 @@ import pandas as pd
 from happytransformer import HappyGeneration, GENSettings
 from server.text2sql.gpt_model import GPTModel
 
-model = GPTModel(model_path="./API/server/copy-saved-model-here/baseline")
+model = GPTModel(model_path="./server/baseline")
 
 
 model_dict = {
@@ -20,4 +20,5 @@ def generate_code(schema, question, settings):
 
 
 if __name__ == "__main__":
-    print(generate_code(schema="a", question="b", settings={"model_ver": "baseline"}))
+    print(generate_code(schema="a", question="b",
+          settings={"model_ver": "baseline"}))
