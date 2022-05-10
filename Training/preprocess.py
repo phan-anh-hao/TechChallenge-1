@@ -1,5 +1,9 @@
+import secrets
 from typing import List, Tuple
 import re
+import nltk
+nltk.download('punkt')
+nltk.download('wordnet')
 from re import sub
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
@@ -14,7 +18,7 @@ nlp = en_core_web_sm.load()
 
 sample = {
     "schema": "STATE/TERRITORY_FIELD : text_TYPE, TEXT/BACKGROUND_COLOUR_FIELD : text_TYPE, FORMAT_FIELD : text_TYPE, CURRENT_SLOGAN_FIELD : text_TYPE, CURRENT_SERIES_FIELD : text_TYPE, NOTES_FIELD : text_TYPE",
-    "question": "Tell me what the notes are for South Australia fullName ",
+    "question": "Tell me what the notes are for South Australia fullName one",
     "sql": "SELECT  NOTES_FIELD FROM table WHERE CURRENT_SLOGAN_FIELD = 'SOUTH AUSTRALIA'"
 }
 
@@ -151,19 +155,19 @@ def default_preprocessing(schema: str, question: str, sql:str="") -> Tuple[str]:
 
     # Stemmning & Lemmatization
     schema, question, sql = lemmatize(schema, question, sql)
+    schema, question, sql = stemming_process(schema, question, sql)
 
     # Number treatment
-
+    schema, question, sql = number_treatment_process(schema, question, sql)
 
     #Input consistency
     schema, question, sql = consistence_schema(schema, question, sql)
 
     # Surround entity
+    schema, question, sql = surrounding_entity_process(schema, question, sql)
 
     # Upper case column name in question
     schema, question, sql = upper_column_name(schema, question, sql)
-
-   
 
     if sql == "":
         return schema, question
