@@ -16,11 +16,6 @@ from collections import Counter
 import en_core_web_sm
 nlp = en_core_web_sm.load()
 
-sample = {
-    "schema": "STATE/TERRITORY_FIELD : text_TYPE, TEXT/BACKGROUND_COLOUR_FIELD : text_TYPE, FORMAT_FIELD : text_TYPE, CURRENT_SLOGAN_FIELD : text_TYPE, CURRENT_SERIES_FIELD : text_TYPE, NOTES_FIELD : text_TYPE",
-    "question": "Tell me what the notes are for South Australia fullName one",
-    "sql": "SELECT  NOTES_FIELD FROM table WHERE CURRENT_SLOGAN_FIELD = 'SOUTH AUSTRALIA'"
-}
 
 def remove_redundant_space(string):
     return " ".join(string.split())
