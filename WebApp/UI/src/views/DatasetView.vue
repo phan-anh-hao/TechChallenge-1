@@ -59,7 +59,7 @@ const handleSubmit = async (e: Event) => {
         </div>
       </div>
 
-      <SqlResultVue :sql="sql" />
+      <SqlResultVue :sql="sql.replace('TABLE', 'tech_challenge')" />
     </div>
   </div>
 </template>

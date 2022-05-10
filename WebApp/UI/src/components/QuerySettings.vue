@@ -2,6 +2,7 @@
 import { useDatasetStore } from '@/stores/dataset'
 import { computed } from '@vue/reactivity'
 import { onUnmounted, ref, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const store = useDatasetStore()
 const model_version = ref<string>('baseline')
@@ -45,6 +46,13 @@ const handleQuerySelect = (e: Event) => {
   }
 }
 
+const router = useRouter()
+
+const handleBackButtonClick = () => {
+  router.back()
+  store.clear_dataset()
+}
+
 defineExpose({
   model_version,
   queries,
@@ -59,9 +67,15 @@ onUnmounted(() => {
   <div
     class="flex flex-col items-center py-8 px-6 border-[1.7px] border-dashed border-emerald-600 rounded-md h-fit"
   >
-    <div class="p-2 px-4 bg-emerald-600 text-white rounded-md self-start ml-4">
-      <span class="fa fa-database mr-2" />
-      {{ store.name }}
+    <div class="self-start flex gap-4 items-center ml-4">
+      <button @click="handleBackButtonClick" class="text-emerald-600">
+        <span class="fa fa-arrow-left" />
+      </button>
+
+      <div class="p-2 px-4 bg-emerald-600 text-white rounded-md">
+        <span class="fa fa-database mr-2" />
+        {{ store.name }}
+      </div>
     </div>
 
     <div class="w-full mt-8 px-4">

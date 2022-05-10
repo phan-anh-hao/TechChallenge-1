@@ -47,19 +47,21 @@ watch(
     let res: QueryExecResult[] = []
     try {
       res = db.value.exec(sql || 'SELECT * from tech_challenge;')
+      console.log(res, sql)
     } catch (e) {
+      console.error(e)
       toast.error('Query executed failed: ' + (e as any).message)
       return
     }
 
-    const parsed = res[0].values.map((value) =>
+    const parsed = res[0]?.values.map((value) =>
       value.reduce(
         (obj, v, index) => ({ ...obj, [res[0].columns[index]]: v }),
         {},
       ),
     )
 
-    dataSource.value = parsed
+    dataSource.value = parsed || []
   },
 )
 
@@ -79,7 +81,8 @@ onMounted(async () => {
     db.value.run(statement)
     toast.success('Insert data from dataset succeeded')
   } catch (e) {
-    toast.error('Database Error: Insert data from dataset failed')
+    console.error(e)
+    toast.error(`Database Error: ${(e as any).message}`)
   }
 })
 

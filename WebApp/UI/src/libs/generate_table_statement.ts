@@ -39,12 +39,13 @@ export function generate_table_statement(
         .join(', '),
     )
     .reduce(
-      (res, record) => `${res}INSERT INTO table VALUES (${record}); \ `,
+      (res, record) =>
+        `${res}INSERT INTO tech_challenge VALUES (${record}); \ `,
       '',
     )
 
-  return `DROP TABLE IF EXISTS table; \
-          CREATE TABLE table (${schema_string}); \
+  return `DROP TABLE IF EXISTS tech_challenge; \
+          CREATE TABLE tech_challenge (${schema_string}); \
           ${data_string}
   `
 }
