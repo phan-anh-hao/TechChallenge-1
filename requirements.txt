@@ -10,4 +10,10 @@ starlette==0.17.1
 streamlit==1.8.1
 tqdm==4.62.3
 uvicorn==0.17.6
+<<<<<<< HEAD
 nltk==3.5
+=======
+nltk
+word2number
+scispacy
+>>>>>>> main

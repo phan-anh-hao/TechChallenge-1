@@ -14,9 +14,9 @@ class GPTDataset(object):
         """Generate txt dataset from a json file.
 
         Args:
-            path_to_json (str): Path to json file.
+            path_to_json (str): Path to json file.s
         """
-        print('Loading dataset...')
+        print('Loading dataset...') 
         print(cloud)
         self.cloud = cloud
         if self.cloud:
