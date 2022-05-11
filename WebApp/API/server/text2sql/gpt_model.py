@@ -1,6 +1,6 @@
 from happytransformer import HappyGeneration
-from postprocess import default_postprocessing
-from preprocess import default_preprocessing
+from server.text2sql.postprocess import default_postprocessing
+from server.text2sql.preprocess import default_preprocessing
 
 class GPTModel():
     def __init__(self, model_version: str = '125M' , model_path : str = None)-> None : 
