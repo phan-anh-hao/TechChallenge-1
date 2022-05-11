@@ -1,6 +1,6 @@
 from happytransformer import HappyGeneration
-from postprocess import default_postprocessing
-from preprocess import default_preprocessing
+from .postprocess import default_postprocessing
+from .preprocess import default_preprocessing
 
 class GPTModel():
     def __init__(self, model_version: str = '125M' , model_path : str = None)-> None : 
@@ -28,7 +28,7 @@ class GPTModel():
         """
         self.model.save(path_to_model)
 
-    def generate(self, schema: str, question: str,  preprocessing  = default_preprocessing , postprocessing = default_postprocessing):
+    def generate(self, schema: str, question: str,  preprocessing  = default_preprocessing , postprocessing = default_posprocessing):
         """Generate SQL from schema and question 
 
         Args:
@@ -40,13 +40,7 @@ class GPTModel():
         Returns:
             _type_: _description_
         """
-
-        print(schema)
-        preprocess_result = preprocessing(schema , question)
-        
-        print("RESULT " , preprocess_result)
-        prompt = " | ".join(preprocess_result)
-
+        prompt = preprocessing(schema , question)
         result = self.model.generate_text(prompt).text
         return postprocessing(result)
 
