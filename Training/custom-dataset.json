@@ -1,0 +1,107 @@
+{
+    "data": [
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "show name that age over 20 and phone is 113",
+            "sql": "SELECT NAME FROM TABLE WHERE AGE > 20 AND PHONE = 113"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "what address which name is Kevin and address is in Ho Chi Minh",
+            "sql": "SELECT ADDRESS FROM TABLE WHERE NAME LIKE '%Kevin%' AND ADDRESS LIKE '%Ho Chi Minh%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "list phone that age less than or equal 30 and address is not in Da Nang",
+            "sql": "SELECT PHONE FROM TABLE WHERE AGE <= 30 AND ADDRESS NOT LIKE '%Da Nang%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "what name that age greater than 27 and job is Engineer",
+            "sql": "SELECT NAME FROM TABLE WHERE AGE > 27 AND JOB LIKE '%Engineer%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "show job that address is in Hanoi and name is Hoa",
+            "sql": "SELECT JOB FROM TABLE WHERE ADDRESS LIKE '%Hanoi%' AND NAME IS LIKE '%Hoa%'"
+        },
+
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "show name that age over 20 or phone is 113",
+            "sql": "SELECT NAME FROM TABLE WHERE AGE > 20 OR PHONE = 113"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "show address which name is Kevin or address is in Ho Chi Minh",
+            "sql": "SELECT ADDRESS FROM TABLE WHERE NAME LIKE '%Kevin%' OR ADDRESS LIKE '%Ho Chi Minh%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "list phone that age less than or equal 30 or address is not in Da Nang",
+            "sql": "SELECT PHONE FROM TABLE WHERE AGE <= 30 OR ADDRESS NOT LIKE '%Da Nang%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "list name that age greater than 27 or job is Engineer",
+            "sql": "SELECT NAME FROM TABLE WHERE AGE > 27 OR JOB LIKE '%Engineer%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT",
+            "question": "what job that address is in Hanoi or name is Hoa",
+            "sql": "SELECT JOB FROM TABLE WHERE ADDRESS LIKE '%Hanoi%' OR NAME IS LIKE '%Hoa%'"
+        },
+
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show greatest age that salary less than 1000 and job is Data Engineer",
+            "sql": "SELECT MAX(AGE) FROM TABLE WHERE SALARY < 1000 AND JOB LIKE '%Data Engineer%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show greatest salary that age equal to 5000 and name is David",
+            "sql": "SELECT MAX(SALARY) FROM TABLE WHERE AGE = 5000 AND NAME LIKE '%David%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show greatest salary that address is in Vietnam or address is in Thailand",
+            "sql": "SELECT MAX(SALARY) FROM TABLE WHERE ADDRESS LIKE '%Vietnam%' OR ADDRESS LIKE '%Thailand%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show greatest age that salary greater than or equal to 10000 and less than or equal to 20000",
+            "sql": "SELECT MAX(AGE) FROM TABLE WHERE SALARY >= 10000 AND SALARY <= 20000"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show greatest age that name is Hoa Pham and phone is 190",
+            "sql": "SELECT MAX(AGE) FROM TABLE WHERE NAME LIKE '%Hoa Pham%' AND PHONE = 190"
+        },
+
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show smallest age that salary less than 1000 and job is Data Engineer",
+            "sql": "SELECT MIN(AGE) FROM TABLE WHERE SALARY < 1000 AND JOB LIKE '%Data Engineer%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show smallest salary that age equal to 5000 and name is David",
+            "sql": "SELECT MIN(SALARY) FROM TABLE WHERE AGE = 5000 AND NAME LIKE '%David%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show lowest salary that address is in Vietnam or address is in Thailand",
+            "sql": "SELECT MIN(SALARY) FROM TABLE WHERE ADDRESS LIKE '%Vietnam%' OR ADDRESS LIKE '%Thailand%'"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show lowest age that salary greater than or equal to 10000 and less than or equal to 20000",
+            "sql": "SELECT MIN(AGE) FROM TABLE WHERE SALARY >= 10000 AND SALARY <= 20000"
+        },
+        {
+            "schema": "NAME : TEXT, AGE : NUMBER, ADDRESS : TEXT, PHONE: NUMBER, JOB: TEXT, SALARY : NUMBER",
+            "question": "show smallest age that name is Hoa Pham and phone is 190",
+            "sql": "SELECT MIN(AGE) FROM TABLE WHERE NAME LIKE '%Hoa Pham%' AND PHONE = 190"
+        },
+    ]
+}
