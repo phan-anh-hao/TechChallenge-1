@@ -1,6 +1,6 @@
 import os
 from model import GPTModel
-from dataset import GPTDataset
+from build_dataset import GPTDataset
 from happytransformer import  GENTrainArgs
 from cloud import OwnCloud
 import argparse
