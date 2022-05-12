@@ -141,6 +141,12 @@ def surrounding_entity_process(schema = "",question = "", sql = ""):
 
     return schema, question_process, sql
 
+# Remove redundant word
+def remove_redundant_field_words(schema, question, sql):
+    schema = schema.replace('_FIELD', '')
+    sql = sql.replace('_FIELD', '')
+    return schema, question, sql
+
 
 def default_preprocessing(schema: str, question: str, sql:str="") -> Tuple[str]:
     # Remove redundant space
@@ -163,6 +169,9 @@ def default_preprocessing(schema: str, question: str, sql:str="") -> Tuple[str]:
 
     # Upper case column name in question
     schema, question, sql = upper_column_name(schema, question, sql)
+
+    # Remove redundant words
+    schema, question, sql = remove_redundant_field_words(schema, question, sql)
 
     if sql == "":
         return schema, question
